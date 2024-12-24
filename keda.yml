@@ -1,0 +1,20 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: parking-api-cron-scaler
+  namespace: default
+spec:
+  scaleTargetRef:
+    name: parking-api  # 스케일링하려는 Deployment 이름
+  minReplicaCount: 3   # 최소 Pod 수
+  maxReplicaCount: 10  # 최대 Pod 수
+  pollingInterval: 30  # 주기 (초 단위) 
+  cooldownPeriod: 300  # 스케일 후 안정화 시간 (초 단위)
+  triggers:
+    - type: cron  # 크론 트리거 사용
+      metadata:
+        timezone: "Asia/Seoul"   # 타임존 설정
+        start: "36 * * * *"       # 시작 시점: 매일 09:00
+        end: "46 * * * *"       # 종료 시점: 매일 17:59
+        desiredReplicas: "5"     # 해당 시간대에 스케일링할 Pod 수
+
