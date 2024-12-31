@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parking-api
-          image: pshhhhh98/parking_api:1.26
+          image: pshhhhh98/parking_api:1.30
           ports:
             - containerPort: 3000
           env:
