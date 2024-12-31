@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3000; // 기본 포트 설정
 
 // OpenAPI와 Kafka 설정
-const API_KEY = process.env.API_KEY || "6d6453566477696e37326641706c54"; // OpenAPI 인증 키
+const API_KEY = process.env.API_KEY || "OPENAPI 인증키"; // OpenAPI 인증 키
 const BASE_URL = "http://openapi.seoul.go.kr:8088"; // OpenAPI 기본 URL
 
 const kafkaBrokers = process.env.KAFKA_BROKERS || "10.10.150.124:9092"; // Kafka 브로커 주소
