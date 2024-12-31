@@ -1,6 +1,3 @@
-
-
-// Import required modules
 import express from "express"; // Express: 서버 생성
 import axios from "axios"; // Axios: HTTP 요청을 위한 라이브러리
 import fs from "fs"; // File System: 파일 읽기/쓰기
